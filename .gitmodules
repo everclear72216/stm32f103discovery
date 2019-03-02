@@ -1,0 +1,6 @@
+[submodule "ucapi"]
+	path = ucapi
+	url = git@github.com:everclear72216/ucapi.git
+[submodule "ucapi_stm32"]
+	path = ucapi_stm32
+	url = git@github.com:everclear72216/ucapi_stm32.git
