@@ -1,0 +1,2 @@
+option('bootloader', type: 'boolean', value: false)
+option('board', type: 'combo', choices: ['NUCLEO-F103RB'], value: 'NUCLEO-F103RB')

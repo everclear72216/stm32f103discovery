@@ -1,0 +1,15 @@
+[binaries]
+c = 'arm-none-eabi-gcc'
+cpp = 'arm-none-eabi-g++'
+ar = 'arm-none-eabi-ar'
+strip = 'arm-none-eabi-strip'
+
+[properties]
+c_args = ['-mcpu=cortex-m3', '-mfloat-abi=soft', '-mthumb']
+c_link_args = ['-nostdlib', '-mcpu=cortex-m3', '-mfloat-abi=soft', '-mthumb']
+
+[host_machine]
+system = 'none'
+cpu_family = 'arm'
+cpu = 'armv7'
+endian = 'little'
