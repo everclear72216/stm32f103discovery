@@ -4,3 +4,6 @@
 [submodule "ucapi_stm32"]
 	path = ucapi_stm32
 	url = git@github.com:everclear72216/ucapi_stm32.git
+[submodule "ucapi_cortex-m"]
+	path = ucapi_cortex-m
+	url = git@github.com:everclear72216/ucapi_cortex-m.git
