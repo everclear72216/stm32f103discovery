@@ -1,7 +1,12 @@
+#include "init.h"
 
 int main(void)
 {
-    while(~0);
+    init();
+
+    for (;;) {
+        asm ("nop");
+    }
     
     return 0;
 }

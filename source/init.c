@@ -105,12 +105,12 @@ extern void init(void)
 
     status = INITIALIZING;
 
-    while(DONE != status) {
+    while ((DONE != status) && (CAUGHT_IN_LOOP != status)) {
         status = single_pass(done);
+    }
 
-        if (CAUGHT_IN_LOOP == status) {
-            FATALERROR();
-        }
+    if (CAUGHT_IN_LOOP == status) {
+        FATALERROR();
     }
 }
 

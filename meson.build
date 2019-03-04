@@ -1,7 +1,7 @@
 project('Playing with CAN', 'c')
 
 # static configuration data
-
+static_libs = []
 include_dirs = []
 link_dir = 'link/'
 memory_layout_linker_script_destination = 'mem.ld'
@@ -32,6 +32,15 @@ configure_file(output: section_layout_linker_script_destination, input: section_
 
 add_project_link_arguments('-Tmem.ld', '-Tsections.ld', language: 'c')
 add_project_link_arguments('-Xlinker', '-Map=mapfile', language: 'c')
+
+subproject('ucapi')
+ucapi_dep = dependency('ucapi', fallback: ['ucapi', 'ucapi_dep'])
+
+subproject('ucapi_cortex-m')
+ucapi_cortex_m_dep = dependency('ucapi_cortex-m', fallback: ['ucapi_cortex-m', 'ucapi_cortex_m_dep'])
+
+subproject('ucapi_stm32')
+ucapi_stm32_dep = dependency('ucapi_stm32_dep', fallback: ['ucapi_stm32', 'ucapi_stm32_dep'])
 
 subdir('include')
 subdir('source')

@@ -9,5 +9,13 @@ pwc_sources += 'exceptions.c'
 
 pwc_sources += 'fatalerror_' + get_option('buildtype') + '.c'
 
-executable('pwc', pwc_sources,
-    include_directories: include_dirs)
+executable(
+    'pwc',
+    pwc_sources,
+    dependencies: [
+        ucapi_dep,
+        ucapi_stm32_dep,
+        ucapi_cortex_m_dep
+    ],
+    include_directories: include_dirs
+)
