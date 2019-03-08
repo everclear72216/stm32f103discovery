@@ -32,7 +32,7 @@ configure_file(output: section_layout_linker_script_destination, input: section_
 add_project_link_arguments('-Tmem.ld', '-Tsections.ld', language: 'c')
 add_project_link_arguments('-Xlinker', '-Map=mapfile', language: 'c')
 
-devconf_dirs = ['ucapi_stm32/devconf']
+devconf_dirs = ['ucapi_cortex-m/devconf', 'ucapi_stm32/devconf']
 subdir('devconf')
 
 subdir('ucapi')
