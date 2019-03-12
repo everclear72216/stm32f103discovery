@@ -5,7 +5,12 @@ ar = 'arm-none-eabi-ar'
 strip = 'arm-none-eabi-strip'
 
 [properties]
-c_args = ['-mcpu=cortex-m3', '-mfloat-abi=soft', '-mthumb']
+# -fno-pic: --> see below
+# -fno-plt: required for proper static linking these prevent the compiler from creating
+#           symbol offset tables in RAM that would need to be initialized by a dynamic
+#           linker. Since there is no such thing on bare-metal systems we need linking
+#           to be hard coded.
+c_args = ['-fno-pic', '-fno-plt', '-fno-common', '-mcpu=cortex-m3', '-mfloat-abi=soft', '-mthumb']
 c_link_args = ['-nostdlib', '-mcpu=cortex-m3', '-mfloat-abi=soft', '-mthumb']
 
 [host_machine]

@@ -1,6 +1,4 @@
-#include <debug.toml>
-#include <clock/clock.toml>
-#include <flash/flash.toml>
+#include <stm32f103xx.toml>
 
 [clock.source]
 value = 'pll'
