@@ -1,0 +1,12 @@
+#include <stm32f103xx.dc>
+
+stm32f1xx::rcc_config.clocksource = stm32f1xx::RccConfigS::clocksource::pll;
+stm32f1xx::rcc_config.pllsource = stm32f1xx::RccConfigS::pllsource::hsi_halved;
+stm32f1xx::rcc_config.pllmultiplier = 12;
+stm32f1xx::rcc_config.ahbprescale = 1;
+stm32f1xx::rcc_config.apb1prescale = 2;
+stm32f1xx::rcc_config.apb2prescale = 1;
+stm32f1xx::rcc_config.adcprescale = 2;
+stm32f1xx::rcc_config.usbprescale = 1.0;
+
+stm32f1xx::flash::latency = 1;

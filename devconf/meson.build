@@ -12,22 +12,22 @@ pcpp_command += '-o'
 pcpp_command += '@OUTPUT@'
 pcpp_command += '@INPUT@'
 
-devconf_toml = custom_target('devconf.toml',
+devconf_dc = custom_target('devconf.dc',
     input: devconf_root,
-    output: 'devconf.toml',
+    output: 'devconf.dc',
     command: pcpp_command
 )
 
-devconf_toml_dep = declare_dependency(sources: devconf_toml)
+devconf_dc_dep = declare_dependency(sources: devconf_dc)
 
 devconf_h = custom_target('devconf.h',
-    input: devconf_toml,
+    input: devconf_dc,
     output: 'devconf.h',
-    depends: devconf_toml,
+    depends: devconf_dc,
     command: [python_prog, meson.source_root() + '/ucapi/devconf', '-o', '@OUTPUT@', '@INPUT@']
 )
 
 devconf_dep = declare_dependency(
     sources: devconf_h,
-    dependencies: devconf_toml_dep
+    dependencies: devconf_dc_dep
 )

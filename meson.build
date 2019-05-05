@@ -8,10 +8,10 @@ subdir('devconf')
 subdir('link')
 
 subdir('ucapi')
-subdir('ucapi_stm32')
 subdir('ucapi_cortex-m')
+subdir('ucapi_stm32')
 
-dependencies = [devconf_dep, ucapi_dep, ucapi_cortex_m_dep, ucapi_stm32_dep, playwithcan_link_dep]
+dependencies = [devconf_dep, ucapi_dep, ucapi_stm32_dep, playwithcan_link_dep]
 
 include_dirs = []
 
