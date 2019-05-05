@@ -1,1 +1,1 @@
-devconf_root = files('playwithcan.toml')
+devconf_root = files('playwithcan.dc')
